@@ -9,6 +9,7 @@
 </head>
 <body>
 <center>
+    <header><a href="nabyt_penezenku.php">Nabýt peněženku</a></header>
     <h1>Registrace</h1>
     <form method="post" action="../php/registrace.php">
         Jméno<br><input type="text" name="jmeno"><br>
