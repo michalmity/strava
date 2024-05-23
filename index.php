@@ -10,7 +10,7 @@
 <body>
 <center>
     <?php if (isset($_SESSION['user_id'])): ?>
-        <a href="../controllers/user_controller.php?action=logout">Odhlásit</a>
+        <a href="../controllers/user_controller.php?action=logout">Odhlásit se</a>
     <?php else: ?>
         <h1>Login</h1>
         <form action="../controllers/user_controller.php" method="post">
