@@ -4,8 +4,7 @@ namespace controllers;
 
 require "../models/user_model.php";
 
-class user_controller
-{
+class user_controller {
     private $user_model;
 
     public function __construct() {
@@ -25,6 +24,8 @@ class user_controller
     }
 }
 
+session_start(); // Zajistí inicializaci session na začátku skriptu
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $controller = new user_controller();
     $action = $_POST['action'];
@@ -33,5 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $controller->register_user();
     } elseif ($action === 'login') {
         $controller->login_user();
+    } elseif ($action === 'logout') {
+        $controller->logout_user();
     }
 }
+?>

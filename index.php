@@ -1,3 +1,6 @@
+<?php
+session_start(); // Inicializace session
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,8 +12,12 @@
 </head>
 <body>
 <center>
-    <?php if (isset($_SESSION['user_id'])): ?>
-        <a href="../controllers/user_controller.php?action=logout">Odhlásit se</a>
+    <?php if (isset($_SESSION["user_id"])): ?>
+        <h1>Uživatel je již přihlášen</h1>
+        <form action="../controllers/user_controller.php" method="post">
+            <input type="hidden" name="action" value="logout">
+            <input type="submit" value="Odhlásit">
+        </form>
     <?php else: ?>
         <h1>Login</h1>
         <form action="../controllers/user_controller.php" method="post">
