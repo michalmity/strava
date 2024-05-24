@@ -1,23 +1,20 @@
-<?php
-session_start(); // Inicializace session
-?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrace</title>
-</head>
-<body>
+<?php require "views/header.php"; ?>
 <center>
     <?php if (isset($_SESSION["user_id"])): ?>
-        <h1>Uživatel je již přihlášen</h1>
-        <form action="../controllers/user_controller.php" method="post">
-            <input type="hidden" name="action" value="logout">
-            <input type="submit" value="Odhlásit">
-        </form>
+    <h1>Vyberte si stravu</h1>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <a href="views/pridatjidlo.php"><button type="button" class="btn btn-primary">Přidat jídlo</button></a>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary">Objednat jídlo</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary">Nabýt peněženku</button>
+                </div>
+            </div>
+        </div>
     <?php else: ?>
         <h1>Login</h1>
         <form action="../controllers/user_controller.php" method="post">
@@ -56,5 +53,4 @@ session_start(); // Inicializace session
         </form>
     <?php endif; ?>
 </center>
-</body>
-</html>
+<?php require "views/footer.php" ?>
