@@ -53,7 +53,7 @@ class user_model {
             if ($conn === false) {
                 die("CHYBA: Nepodařilo se připojit. " . $conn->connect_error);
             }
-            $sql = "SELECT id_stravnik, heslo , role_id FROM stravnik WHERE email = ?";
+            $sql = "SELECT id_stravnik,jmeno, heslo , role_id FROM stravnik WHERE email = ?";
             $stmt = $conn->prepare($sql);
             if ($stmt === false) {
                 die("CHYBA: Nepodařilo se připravit dotaz. " . $conn->error);
@@ -61,14 +61,15 @@ class user_model {
 
             $stmt->bind_param('s', $email);
             $stmt->execute();
-            $stmt->bind_result($id, $hashed_password, $role_id);
+            $stmt->bind_result($id, $jmeno,$hashed_password, $role_id);
 
             if ($stmt->fetch()) {
                 if (password_verify($heslo_in, $hashed_password)) {
                     // Přihlášení úspěšné
                     session_start();
                     $_SESSION['user_id'] = $id;
-                    $_SESSION['user_role'] = $hashed_password;
+                    $_SESSION['user_name'] = $jmeno;
+                    $_SESSION['user_role'] = $role_id;
                     header("Location: /index.php");
                     exit();
                 } else {
