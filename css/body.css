@@ -1,0 +1,11 @@
+body{
+    user-select: none; /* Disable text selection */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    display: flex; /* Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: hsl(218deg 50% 91%); /* Light blue */
+    height: 100vh; /* Full height */
+    font-family: "Montserrat SemiBold", sans-serif; /* Font */
+}
+
