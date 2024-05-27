@@ -20,7 +20,7 @@
 <div class="container" id="container">
     <div class="form-container" id="form-container">
         <div class="form" id="form-login">
-            <h2>Login</h2>
+            <h2>Přihlášení</h2>
             <form action="../controllers/user_controller.php" method="post">
                 <input type="hidden" name="action" value="login">
                 <label for="email">Email:</label><br>

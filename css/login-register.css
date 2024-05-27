@@ -1,7 +1,8 @@
 .container {
-    background-color: #fff;
+    color: white;
+    background: var(--white);
     border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     overflow: hidden;
     width: 384px;
     transition: height 0.5s ease-in-out;
@@ -15,7 +16,8 @@
 .form {
     min-width: 384px;
     padding: 20px;
-    background: white;
+    color: var(--dark-blue);
+    background-color: var(--white);
     box-sizing: border-box;
     transition: opacity 0.5s ease-in-out;
 }
@@ -28,6 +30,11 @@ input {
     border-radius: 5px;
     box-sizing: border-box;
 }
+input:focus {
+    outline: none;
+    border-color: var(--dark-blue);
+}
+
 
 .input-group-two {
     display: flex;
@@ -61,7 +68,7 @@ label {
 }
 
 .form a {
-    color: #1e6ffc;
+    color: var(--purple);
     cursor: pointer;
 }
 
@@ -71,4 +78,8 @@ label {
 
 .form form {
     width: 100%;
+}
+
+h1, h2, h3 {
+    color: var(--purple);
 }

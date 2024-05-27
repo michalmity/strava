@@ -2,6 +2,14 @@
 @import "../css/body.css";
 @import "../css/header.css";
 
+:root {
+    --dark-blue: #2B2D42;
+    --purple: #8D62A9;
+    --light-gray: #EDF2F4;
+    --white: #FFFFFF;
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +18,8 @@
 
 .button-submit
 {
-    color: white;
-    background-color: #1e6ffc;
+    background-color: var(--purple);
+    color: var(--white);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -20,4 +28,7 @@
     font-weight: 600;
     transition: background-color 0.3s;
 }
+
+
+
 

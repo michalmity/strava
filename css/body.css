@@ -4,7 +4,8 @@ body{
     display: flex; /* Flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    background: hsl(218deg 50% 91%); /* Light blue */
+    background-color: var(--light-gray);
+    color: var(--dark-blue);
     height: 100vh; /* Full height */
     font-family: "Montserrat SemiBold", sans-serif; /* Font */
 }
